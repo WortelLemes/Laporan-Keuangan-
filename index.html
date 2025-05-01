@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Keuangan Harian</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="pnl.jpg">
+</head>
+<body>
+    <div class="container">
+        <!-- Kartu Profil Pengguna -->
+        <div class="profile-card">
+            <img src="pp.png" alt="Foto Profil" class="pp">
+            <h2 class="username">‎ ‎ Rohman Mannn_私</h2>
+        </div>
+
+        <!-- Header Aplikasi -->
+        <h1 class="title">LAPORAN KEUANGAN HARIAN</h1>
+        <p class="subtitle">Mengelola keuangan Anda dengan lebih baik</p>
+
+        <!-- Ringkasan Keuangan -->
+        <div class="summary">
+            <div class="card income">Pemasukan: <span id="totalIncome">0</span></div>
+            <div class="card expense">Pengeluaran: <span id="totalExpense">0</span></div>
+            <div class="card balance">Saldo Akhir: <span id="balance">0</span></div>
+        </div>
+
+      <!-- Form Tambah Transaksi dengan Box Kontainer -->
+<div class="form-container">
+    <h2 class="form-title">Tambah Transaksi</h2>
+    <div class="form-box">
+        <form id="transactionForm">
+            <!-- Input Tanggal -->
+            <div class="input-group">
+                <label for="date">Tanggal:</label>
+                <input type="date" id="date" required>
+            </div>
+            
+            <!-- Input Keterangan Transaksi -->
+            <div class="input-group">
+                <label for="description">Keterangan:</label>
+                <input type="text" id="description" placeholder="Keterangan transaksi" required>
+            </div>
+            
+            <!-- Pilihan Tipe Transaksi -->
+            <div class="input-group">
+                <label for="type">Tipe Transaksi:</label>
+                <select id="type" required>
+                    <option value="income">Pemasukan</option>
+                    <option value="expense">Pengeluaran</option>
+                </select>
+            </div>
+            
+            <!-- Input Jumlah Transaksi -->
+            <div class="input-group">
+                <label for="amount">Jumlah (Rp):</label>
+                <input type="number" id="amount" placeholder="Jumlah (Rp)" required>
+            </div>
+            
+            <!-- Tombol Aksi -->
+            <button type="submit" class="btn green" id="submitBtn">Tambah</button>
+            <button type="button" class="btn red" id="clearAll">Hapus Semua</button>
+        </form>
+    </div>
+</div>
+
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Tanggal</th>
+                        <th>Keterangan</th>
+                        <th>Pemasukan (Rp)</th>
+                        <th>Pengeluaran (Rp)</th>
+                        <th>Saldo (Rp)</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionTable"></tbody>
+            </table>
+        </div>
+    </div>
+    
+<div class="export">
+  
+    <button class="btn blue" id="exportTelegram">Kirim ke Telegram</button> 
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
