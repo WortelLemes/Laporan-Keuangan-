@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyDuit</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="icon" href="logo.png">
+</head>
+<div id="loading-screen">
+  <video id="loading-video" autoplay muted playsinline>
+    <source src="loading.mp4" type="video/mp4">
+    Browser kamu tidak mendukung video.
+  </video>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const loadingScreen = document.getElementById('loading-screen');
+  const video = document.getElementById('loading-video');
+
+  video.play().catch(() => {
+    console.warn("Autoplay diblokir browser. Tambahkan muted agar bisa otomatis.");
+  });
+
+  setTimeout(() => {
+    loadingScreen.style.opacity = '0';
+    setTimeout(() => loadingScreen.style.display = 'none', 600);
+  }, 5000);
+});
+</script>
+</script>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <div class="container mx-auto px-4 py-6 max-w-6xl">
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+           <h4 class="text-3xl font-bold text-gray-800 text-center"><svg height="64px" width="64px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle style="fill:#FCDE65;" cx="256" cy="256" r="256"></circle> <circle style="fill:#FBCD18;" cx="256" cy="256" r="227.868"></circle> <path style="fill:#FFE991;" d="M256,450.673c-27.734,0-54.542-5.74-79.682-17.061c-4.25-1.914-6.144-6.91-4.231-11.16 c1.915-4.25,6.916-6.144,11.16-4.23c22.948,10.333,47.425,15.572,72.751,15.572s49.801-5.238,72.747-15.57 c4.245-1.911,9.245-0.021,11.16,4.23c1.913,4.25,0.02,9.247-4.231,11.16C310.539,444.932,283.731,450.673,256,450.673z"></path> <g> <path style="fill:#FCDE65;" d="M219.865,407.347c-1.922,0-3.855-0.653-5.438-1.99l-88.379-74.581l-40.924-0.264 c-4.661-0.03-8.415-3.833-8.384-8.494c0.029-4.642,3.803-8.386,8.438-8.386c0.056,0,44.034,0.285,44.034,0.285 c1.974,0.013,3.88,0.717,5.388,1.989l90.713,76.551c3.563,3.006,4.013,8.33,1.007,11.893 C224.65,406.329,222.265,407.347,219.865,407.347z"></path> <path style="fill:#FCDE65;" d="M267.127,407.347c-1.922,0-3.855-0.653-5.438-1.99L135.887,299.197H73.033 c-4.662,0-8.44-3.779-8.44-8.44s3.778-8.44,8.44-8.44h65.939c1.993,0,3.919,0.704,5.443,1.99l128.16,108.15 c3.563,3.006,4.013,8.33,1.007,11.893C271.911,406.329,269.527,407.347,267.127,407.347z"></path> <path style="fill:#FCDE65;" d="M172.672,407.347c-1.922,0-3.855-0.653-5.438-1.99l-51.585-43.531H97.322 c-4.662,0-8.44-3.779-8.44-8.44s3.778-8.44,8.44-8.44h21.413c1.993,0,3.924,0.707,5.447,1.993 c0.302,0.255,53.938,45.517,53.938,45.517c3.563,3.006,4.013,8.33,1.007,11.893C177.457,406.329,175.072,407.347,172.672,407.347z"></path> </g> <g> <path style="fill:#FFE991;" d="M69.767,264.44c-4.662,0-8.44-3.779-8.44-8.44c0-41.947,13.198-81.936,38.167-115.643 c2.774-3.746,8.06-4.531,11.804-1.759c3.746,2.775,4.533,8.06,1.759,11.805C90.258,181.183,78.207,217.697,78.207,256 C78.207,260.661,74.429,264.44,69.767,264.44z"></path> <path style="fill:#FFE991;" d="M128.734,128.613c-2.252,0-4.498-0.895-6.16-2.667c-3.188-3.399-3.016-8.741,0.385-11.929 C159.198,80.04,206.446,61.327,256,61.327c5.045,0,10.167,0.199,15.224,0.593c4.647,0.361,8.121,4.422,7.76,9.07 c-0.361,4.646-4.417,8.111-9.07,7.76c-4.623-0.36-9.305-0.542-13.914-0.542c-45.25,0-88.397,17.091-121.496,48.125 C132.876,127.858,130.802,128.613,128.734,128.613z"></path> <path style="fill:#FFE991;" d="M361.463,111.04c-1.652,0-3.321-0.484-4.784-1.492c-16.836-11.612-35.342-20.151-55.002-25.383 c-4.504-1.198-7.184-5.822-5.985-10.327c1.198-4.504,5.823-7.182,10.327-5.985c21.539,5.731,41.807,15.084,60.244,27.799 c3.837,2.647,4.803,7.902,2.156,11.739C366.78,109.765,364.143,111.04,361.463,111.04z"></path> <path style="fill:#FFE991;" d="M442.233,264.44c-4.662,0-8.44-3.779-8.44-8.44c0-47.507-18.583-92.198-52.325-125.842 c-3.3-3.291-3.307-8.634-0.018-11.935c3.293-3.302,8.635-3.308,11.936-0.018c36.942,36.834,57.287,85.771,57.287,137.794 C450.673,260.661,446.895,264.44,442.233,264.44z"></path> </g> <path style="fill:#FEF7D8;" d="M295.386,367.965h-20.249l34.401-237.575l-70.863,32.472c-4.238,1.942-6.099,6.951-4.157,11.187 c1.42,3.098,4.479,4.926,7.678,4.926c1.176,0,2.371-0.248,3.51-0.77l9.022-4.134l-27.539,193.893h-22.67 c-4.662,0-8.44,3.779-8.44,8.44s3.778,8.44,8.44,8.44h90.867c4.662,0,8.44-3.779,8.44-8.44S300.048,367.965,295.386,367.965z"></path> </g></svg></h4>
+            <h1 class="text-3xl font-bold text-gray-800 text-center">laporan Keuangan Pribadi</h1>
+              <h1 class="text-2x1 font-bold text-blue-600 text-center">Halo, Mannn_私.✦</h1>
+            <p class="text-gray-600 text-center mt-2">Kelola pemasukan dan pengeluaran Anda dengan mudah</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-4 mb-6">
+            <div class="flex flex-wrap gap-2 justify-center">
+                <button onclick="showSection('dashboard')" id="btn-dashboard" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">Dashboard</button>
+                <button onclick="showSection('input')" id="btn-input" class="px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">Input Transaksi</button>
+                <button onclick="showSection('history')" id="btn-history" class="px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">Riwayat</button>
+                <button onclick="showSection('reports')" id="btn-reports" class="px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">Laporan</button>
+            </div>
+        </div>
+
+        <div id="dashboard-section" class="section fade-in">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div class="bg-gradient-to-r from-green-500 to-green-600 rounded-xl shadow-lg p-6 text-white">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-green-100">Saldo Saat Ini</p>
+                            <p id="current-balance" class="text-2xl font-bold">Rp 0</p>
+                        </div>
+                        <div class="text-4xl"><svg height="50px" width="50px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#ffffff;} </style> <g> <path class="st0" d="M326.27,86.016l57.667,15.304c1.504,0.307,2.726,1.536,3.072,3.049l15.203,57.667 c0.41,1.693,1.899,2.883,3.631,2.883c1.749,0,3.222-1.19,3.615-2.883l15.226-57.667c0.323-1.512,1.552-2.742,3.056-3.049 l57.675-15.304c1.686-0.316,2.884-1.82,2.884-3.553c0-1.749-1.198-3.222-2.884-3.56L427.74,63.606 c-1.504-0.322-2.733-1.536-3.056-3.048L409.458,2.891C409.064,1.213,407.591,0,405.843,0c-1.732,0-3.222,1.213-3.631,2.891 l-15.203,57.667c-0.346,1.512-1.567,2.726-3.072,3.048L326.27,78.903c-1.702,0.339-2.883,1.812-2.883,3.56 C323.387,84.196,324.569,85.701,326.27,86.016z"></path> <path class="st0" d="M385.253,326.53l-26.176-6.939c-0.685-0.158-1.244-0.694-1.394-1.386l-6.9-26.175 c-0.181-0.764-0.851-1.308-1.646-1.308c-0.78,0-1.457,0.544-1.646,1.308l-6.9,26.175c-0.158,0.693-0.709,1.228-1.394,1.386 l-26.167,6.939c-0.772,0.15-1.316,0.828-1.316,1.615c0,0.788,0.544,1.466,1.316,1.623l26.167,6.932 c0.685,0.141,1.236,0.709,1.394,1.402l6.9,26.159c0.189,0.764,0.866,1.308,1.646,1.308c0.796,0,1.465-0.544,1.646-1.308l6.9-26.159 c0.15-0.693,0.709-1.261,1.394-1.402l26.176-6.932c0.756-0.157,1.308-0.835,1.308-1.623 C386.56,327.357,386.009,326.68,385.253,326.53z"></path> <path class="st0" d="M37.841,140.075l41.204,10.917c1.086,0.229,1.946,1.104,2.205,2.19l10.854,41.204 c0.299,1.221,1.363,2.064,2.6,2.064c1.244,0,2.3-0.843,2.592-2.064l10.862-41.204c0.229-1.086,1.119-1.961,2.198-2.19 l41.212-10.917c1.205-0.252,2.063-1.339,2.063-2.568c0-1.229-0.858-2.284-2.063-2.536l-41.212-10.934 c-1.079-0.236-1.969-1.086-2.198-2.174L97.296,80.636c-0.292-1.198-1.347-2.048-2.592-2.048c-1.236,0-2.3,0.85-2.6,2.048 l-10.854,41.228c-0.26,1.087-1.119,1.937-2.205,2.174l-41.204,10.934c-1.229,0.252-2.072,1.307-2.072,2.536 C35.769,138.736,36.612,139.824,37.841,140.075z"></path> <path class="st0" d="M396.595,276.897c-7.877-9.216-19.133-17.392-33.012-24.245h0.016c-27.68-13.706-65.638-22.094-107.583-22.118 l-0.118,0.007v-0.007c-27.546,0.007-53.398,3.623-75.745,9.988c-22.347,6.365-41.156,15.439-54.705,26.467l0.023-0.016 c-9.05,7.357-15.706,15.565-19.4,24.49c-2.112,5.065-3.222,10.405-3.214,15.816c0,4.451,3.608,8.066,8.066,8.066 c4.459,0,8.066-3.615,8.066-8.066c0.008-3.253,0.623-6.348,1.985-9.657c2.355-5.734,7.168-12.051,14.659-18.117l0.023-0.016 c11.154-9.137,28.184-17.581,48.916-23.449c20.732-5.916,45.198-9.374,71.326-9.366h0.425c39.629,0.008,75.429,8.145,100.1,20.433 l0.024,0.008c12.382,6.097,21.937,13.264,27.884,20.259c2.994,3.506,5.12,6.948,6.483,10.248c1.702,4.12,6.412,6.074,10.532,4.372 c4.12-1.701,6.073-6.412,4.372-10.531C403.613,286.373,400.542,281.497,396.595,276.897z"></path> <path class="st0" d="M485.912,271.966c-3.403-8.208-8.058-15.84-13.675-22.89c-5.616-7.042-12.185-13.517-19.496-19.472 l-0.448-0.362l0.433,0.362c-21.961-17.849-50.862-31.492-84.338-41.07h-0.008c-33.508-9.523-71.735-14.84-112.38-14.84 c-30.972,0-60.527,3.088-87.67,8.767c-27.144,5.68-51.877,13.95-73.208,24.489l-0.016,0.008 c-21.307,10.571-39.424,23.442-52.87,39.14l0.244-0.3l-0.252,0.3c-6.711,7.862-12.256,16.487-16.14,25.868 c-3.891,9.389-6.057,19.511-6.05,29.932v81.873c-0.007,10.43,2.159,20.559,6.05,29.948c3.403,8.208,8.059,15.832,13.675,22.882 c5.624,7.05,12.185,13.517,19.494,19.472l0.016,0.008c21.961,17.833,50.853,31.507,84.33,41.069l0.18,0.04 C177.255,506.683,215.418,511.992,256,512h0.008c30.964-0.008,60.518-3.096,87.662-8.775c27.144-5.68,51.877-13.958,73.208-24.49 l0.015-0.015c21.307-10.572,39.416-23.45,52.87-39.133l0.008-0.015c6.711-7.846,12.248-16.462,16.132-25.852l-0.244,0.575 l0.252-0.575c3.883-9.39,6.05-19.519,6.05-29.948v-81.873C491.961,291.477,489.795,281.355,485.912,271.966z M72.838,426.409 c-2.481-2.339-4.797-4.718-6.86-7.121c-4.892-5.734-8.563-11.602-11.013-17.51c-2.45-5.923-3.678-11.886-3.678-18.006v-37.116 c4.781,5.9,10.429,11.469,16.817,16.684c1.537,1.236,3.112,2.458,4.734,3.671V426.409z M118.083,454.932 c-3.111-1.355-6.175-2.742-9.114-4.206c-6.845-3.387-13.147-7.003-18.896-10.775v-61.676c8.578,4.923,17.951,9.436,28.01,13.501 V454.932z M174.111,472.505c-14.194-3.002-27.514-6.759-39.794-11.146h1.016v-63.29c3.946,1.307,7.995,2.544,12.122,3.726 c8.539,2.426,17.456,4.552,26.656,6.404V472.505z M247.375,480.657c-19.519-0.394-38.282-2.174-56.021-5.041v-64.401 c17.841,2.756,36.604,4.371,56.021,4.75V480.657z M322.804,475.23c-18.369,3.064-37.856,4.986-58.179,5.38v-64.607 c20.196-0.394,39.708-2.15,58.179-5.081V475.23z M378.833,460.965c-6.081,2.206-12.414,4.254-19.008,6.128 c-6.364,1.812-12.996,3.426-19.786,4.907v-64.228c13.651-2.82,26.632-6.333,38.794-10.437V460.965z M424.085,438.484 c-8.16,5.593-17.55,10.792-28.018,15.517v-63.125c5.041-2.088,9.933-4.278,14.604-6.585c4.671-2.324,9.137-4.758,13.414-7.279 V438.484z M460.713,383.771c0,6.12-1.228,12.084-3.686,18.006c-3.151,7.656-8.436,15.274-15.707,22.576v-58.242h-1.024 c7.152-5.459,13.493-11.28,18.826-17.51c0.543-0.638,1.063-1.284,1.59-1.93V383.771z M457.027,319.89 c-4.253,10.334-12.367,20.59-24.024,30.082c-17.448,14.241-42.756,26.593-73.177,35.233 c-30.412,8.665-65.922,13.667-103.825,13.667c-57.746,0.024-109.978-11.658-147.031-30.035 c-18.526-9.16-33.209-19.967-42.992-31.444c-4.892-5.727-8.563-11.595-11.013-17.502c-2.45-5.924-3.678-11.879-3.678-17.991 s1.228-12.067,3.678-17.991c4.27-10.342,12.367-20.598,24.033-30.074c17.456-14.25,42.756-26.608,73.177-35.249 c30.413-8.656,65.93-13.651,103.826-13.651c57.746-0.032,109.969,11.658,147.023,30.027c18.534,9.153,33.224,19.976,42.992,31.436 c4.899,5.727,8.57,11.595,11.012,17.51c2.458,5.924,3.686,11.878,3.686,17.991S459.485,313.966,457.027,319.89z"></path> </g> </g></svg></div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl shadow-lg p-6 text-white">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-blue-100">Total Pemasukan</p>
+                            <p id="total-income" class="text-2xl font-bold">Rp 0</p>
+                        </div>
+                        <div class="text-3xl"><svg width="50px" height="50px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M22 22H12C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12V9M2 2V5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> <path d="M19.0002 7L15.8821 10.9264C15.4045 11.5278 15.1657 11.8286 14.8916 11.9751C14.47 12.2005 13.9663 12.2114 13.5354 12.0046C13.2551 11.8701 13.0035 11.5801 12.5002 11C11.9968 10.4199 11.7452 10.1299 11.4649 9.99535C11.034 9.78855 10.5303 9.7995 10.1088 10.0248C9.83461 10.1714 9.5958 10.4721 9.11819 11.0735L6 15" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> </g></svg></div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-red-500 to-red-600 rounded-xl shadow-lg p-6 text-white">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-red-100">Total Pengeluaran</p>
+                            <p id="total-expense" class="text-2xl font-bold">Rp 0</p>
+                        </div>
+                        <div class="text-3xl"><svg width="50px" height="50px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M19.0002 15L15.8821 11.0736C15.4045 10.4722 15.1657 10.1714 14.8916 10.0249C14.47 9.79953 13.9663 9.78857 13.5354 9.99537C13.2551 10.1299 13.0035 10.4199 12.5002 11C11.9968 11.5801 11.7452 11.8701 11.4649 12.0046C11.034 12.2115 10.5303 12.2005 10.1088 11.9752C9.83461 11.8286 9.5958 11.5279 9.11819 10.9265L6 7" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> <path d="M22 22H12C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12V9M2 2V5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> </g></svg></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Transaksi Terbaru</h3>
+                <div id="recent-transactions" class="space-y-3">
+                    <p class="text-gray-500 text-center py-8">Belum ada transaksi</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="input-section" class="section hidden">
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h3 class="text-xl font-semibold text-gray-800 mb-6">Input Transaksi Baru</h3>
+                <form id="transaction-form" class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Jenis Transaksi</label>
+                            <select id="transaction-type" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="income">Pemasukan</option>
+                                <option value="expense">Pengeluaran</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Jumlah</label>
+                            <input type="number" id="transaction-amount" placeholder="0" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Kategori</label>
+                        <select id="transaction-category" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="makanan">Makanan & Minuman</option>
+                            <option value="transportasi">Transportasi</option>
+                            <option value="belanja">Belanja</option>
+                            <option value="hiburan">Hiburan</option>
+                            <option value="kesehatan">Kesehatan</option>
+                            <option value="gaji">Gaji</option>
+                            <option value="bonus">Bonus</option>
+                            <option value="lainnya">Lainnya</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Deskripsi</label>
+                        <input type="text" id="transaction-description" placeholder="Deskripsi transaksi" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Tanggal</label>
+                        <input type="date" id="transaction-date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium"> Simpan Transaksi </button>
+                </form>
+            </div>
+        </div>
+
+        <div id="history-section" class="section hidden">
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+                    <h3 class="text-xl font-semibold text-gray-800">Riwayat Transaksi</h3>
+                    <div class="flex gap-2">
+                        <input type="text" id="search-input" placeholder="Cari transaksi..." class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <select id="filter-type" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="all">Semua</option>
+                            <option value="income">Pemasukan</option>
+                            <option value="expense">Pengeluaran</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="transactions-list" class="space-y-3">
+                    <p class="text-gray-500 text-center py-8">Belum ada transaksi</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="reports-section" class="section hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4"><svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 12C7.44772 12 7 12.4477 7 13C7 13.5523 7.44772 14 8 14H16C16.5523 14 17 13.5523 17 13C17 12.4477 16.5523 12 16 12H8Z" fill="#152C70"></path> <path d="M7 17C7 16.4477 7.44772 16 8 16H12C12.5523 16 13 16.4477 13 17C13 17.5523 12.5523 18 12 18H8C7.44772 18 7 17.5523 7 17Z" fill="#152C70"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M8 3C8 2.44772 7.55228 2 7 2C6.44772 2 6 2.44772 6 3V4.10002C3.71776 4.56329 2 6.58104 2 9V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V9C22 6.58104 20.2822 4.56329 18 4.10002V3C18 2.44772 17.5523 2 17 2C16.4477 2 16 2.44772 16 3V4H8V3ZM20 10H4V17C4 18.6569 5.34315 20 7 20H17C18.6569 20 20 18.6569 20 17V10ZM4.17071 8C4.58254 6.83481 5.69378 6 7 6H17C18.3062 6 19.4175 6.83481 19.8293 8H4.17071Z" fill="#152C70"></path> </g></svg> Laporan Harian</h3>
+                    <input type="date" id="daily-date" class="w-full px-3 py-2 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <div id="daily-report" class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Pemasukan:</span>
+                            <span id="daily-income" class="text-green-600 font-medium">Rp 0</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Pengeluaran:</span>
+                            <span id="daily-expense" class="text-red-600 font-medium">Rp 0</span>
+                        </div>
+                        <hr class="my-2">
+                        <div class="flex justify-between font-semibold">
+                            <span>Selisih:</span>
+                            <span id="daily-balance" class="text-gray-800">Rp 0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4"><svg fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 72 72" enable-background="new 0 0 72 72" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M54.016,9.453C48.688,5.833,42.46,3.92,36.005,3.92c-8.552,0-16.608,3.331-22.685,9.384 C7.255,19.37,3.915,27.431,3.915,36.001c0,17.688,14.396,32.08,32.09,32.08c16.838,0,30.892-13.147,31.996-29.894 c0.058-0.682,0.084-1.396,0.084-2.188C68.085,25.362,62.826,15.438,54.016,9.453z M64.025,34.192l-25.633,0.738l17.614-18.626 C60.716,21.085,63.59,27.418,64.025,34.192z M51.768,12.761c0.982,0.667,1.912,1.391,2.79,2.164l-18.573,19.64L16.869,15.449 c5.228-4.86,11.982-7.529,19.136-7.529C41.654,7.92,47.104,9.594,51.768,12.761z M36.005,64.08c-15.488,0-28.09-12.598-28.09-28.08 c0-7.166,2.674-13.922,7.538-19.139l19.845,19.846c0.002,0.003,0.006,0.004,0.009,0.006c0.083,0.081,0.182,0.144,0.289,0.192 c0.01,0.005,0.018,0.015,0.028,0.019C35.741,36.973,35.87,37,36.005,37c0.006,0,0.01,0,0.015,0.001 c0.001,0,0.003-0.001,0.004-0.001c0.003,0,0.006,0,0.01,0l28.048-0.808c-0.004,0.599-0.022,1.152-0.068,1.696 C63.044,52.576,50.743,64.08,36.005,64.08z"></path> <path d="M12.093,38.855c0.551-0.045,0.961-0.526,0.915-1.078c-0.048-0.588-0.072-1.187-0.072-1.776c0-0.553-0.448-1-1-1 c-0.553,0-1,0.447-1,1c0,0.644,0.026,1.296,0.079,1.94c0.043,0.522,0.48,0.918,0.996,0.918 C12.039,38.859,12.066,38.857,12.093,38.855z"></path> <path d="M13.94,42.488c-0.168-0.527-0.73-0.818-1.257-0.65c-0.525,0.168-0.816,0.732-0.648,1.258 c1.491,4.672,4.373,8.697,8.335,11.635c0.179,0.133,0.388,0.197,0.595,0.197c0.306,0,0.608-0.138,0.803-0.404 c0.329-0.443,0.236-1.068-0.207-1.398C17.938,50.438,15.303,46.76,13.94,42.488z"></path> </g> </g></svg> Laporan Mingguan</h3>
+                    <input type="week" id="weekly-date" class="w-full px-3 py-2 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <div id="weekly-report" class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Pemasukan:</span>
+                            <span id="weekly-income" class="text-green-600 font-medium">Rp 0</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Pengeluaran:</span>
+                            <span id="weekly-expense" class="text-red-600 font-medium">Rp 0</span>
+                        </div>
+                        <hr class="my-2">
+                        <div class="flex justify-between font-semibold">
+                            <span>Selisih:</span>
+                            <span id="weekly-balance" class="text-gray-800">Rp 0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4"><svg fill="#000000" height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M407.509,206.367h-96.653c-4.329,0-7.837,3.509-7.837,7.837c0,4.328,3.508,7.837,7.837,7.837h96.653 c4.329,0,7.837-3.509,7.837-7.837C415.346,209.876,411.838,206.367,407.509,206.367z"></path> </g> </g> <g> <g> <path d="M407.509,253.388h-96.653c-4.329,0-7.837,3.509-7.837,7.837s3.508,7.837,7.837,7.837h96.653 c4.329,0,7.837-3.509,7.837-7.837C415.346,256.895,411.838,253.388,407.509,253.388z"></path> </g> </g> <g> <g> <path d="M407.509,300.407h-96.653c-4.329,0-7.837,3.509-7.837,7.837c0,4.328,3.508,7.837,7.837,7.837h96.653 c4.329,0,7.837-3.509,7.837-7.837C415.346,303.916,411.838,300.407,407.509,300.407z"></path> </g> </g> <g> <g> <path d="M254.693,206.367h-50.939c-4.329,0-7.837,3.509-7.837,7.837c0,4.328,3.508,7.837,7.837,7.837h50.939 c4.329,0,7.837-3.509,7.837-7.837C262.53,209.876,259.022,206.367,254.693,206.367z"></path> </g> </g> <g> <g> <path d="M254.693,253.388h-50.939c-4.329,0-7.837,3.509-7.837,7.837s3.508,7.837,7.837,7.837h50.939 c4.329,0,7.837-3.509,7.837-7.837S259.022,253.388,254.693,253.388z"></path> </g> </g> <g> <g> <path d="M254.693,300.407h-50.939c-4.329,0-7.837,3.509-7.837,7.837c0,4.328,3.508,7.837,7.837,7.837h50.939 c4.329,0,7.837-3.509,7.837-7.837C262.53,303.916,259.022,300.407,254.693,300.407z"></path> </g> </g> <g> <g> <path d="M254.693,347.427h-50.939c-4.329,0-7.837,3.509-7.837,7.837c0,4.328,3.508,7.837,7.837,7.837h50.939 c4.329,0,7.837-3.509,7.837-7.837C262.53,350.936,259.022,347.427,254.693,347.427z"></path> </g> </g> <g> <g> <path d="M407.509,154.122H203.754c-4.329,0-7.837,3.509-7.837,7.837c0,4.328,3.508,7.837,7.837,7.837h203.755 c4.329,0,7.837-3.509,7.837-7.837C415.346,157.631,411.838,154.122,407.509,154.122z"></path> </g> </g> <g> <g> <path d="M407.509,396.539H203.754c-4.329,0-7.837,3.509-7.837,7.837c0,4.328,3.508,7.837,7.837,7.837h203.755 c4.329,0,7.837-3.509,7.837-7.837C415.346,400.048,411.838,396.539,407.509,396.539z"></path> </g> </g> <g> <g> <path d="M254.693,436.245h-50.939c-4.329,0-7.837,3.509-7.837,7.837c0,4.328,3.508,7.837,7.837,7.837h50.939 c4.329,0,7.837-3.509,7.837-7.837C262.53,439.754,259.022,436.245,254.693,436.245z"></path> </g> </g> <g> <g> <path d="M307.424,46.498c-32.493,0-57.946,18.258-57.946,41.565c0,23.309,25.453,41.567,57.946,41.567 c32.492,0.001,57.946-18.259,57.946-41.567C365.369,64.755,339.917,46.498,307.424,46.498z M307.424,113.957 c-22.915,0.001-42.272-11.858-42.272-25.894c0-14.035,19.358-25.892,42.272-25.892c22.915,0,42.272,11.857,42.272,25.892 C349.696,102.099,330.338,113.957,307.424,113.957z"></path> </g> </g> <g> <g> <path d="M467.084,445.649c-4.329,0-7.837,3.509-7.837,7.837v34.871c0,4.395-3.713,7.969-8.276,7.969H156.097 c-4.564,0-8.278-3.576-8.278-7.969V54.466c0-15.169-6.335-28.908-16.54-38.793h288.271c21.888,0,39.696,17.403,39.696,38.793 v367.672c0,4.328,3.508,7.837,7.837,7.837c4.329,0,7.837-3.509,7.837-7.837V54.466C474.92,24.434,450.08,0,419.55,0H92.45 C61.919,0,37.079,24.434,37.079,54.466v17.632c0,4.328,3.508,7.837,7.837,7.837c4.329,0,7.837-3.509,7.837-7.837V54.466 C52.752,33.076,70.56,15.673,92.45,15.673c21.888,0,39.696,17.403,39.696,38.793v168.626c-0.484,0.399-0.924,0.857-1.304,1.372 c-2.302,3.109-5.818,4.891-9.649,4.891c-3.229,0-6.26-1.266-8.537-3.566c-1.471-1.487-3.477-2.324-5.569-2.324 c-2.092,0-4.098,0.837-5.569,2.324c-2.277,2.3-5.308,3.566-8.537,3.566c-2.251,0-4.399-0.628-6.269-1.78v-42.51 c0-4.328-3.508-7.837-7.837-7.837c-4.328,0-7.837,3.509-7.837,7.837v42.51c-1.87,1.152-4.019,1.78-6.269,1.78 c-6.626,0-12.016-5.391-12.016-12.016V108.669c0-4.328-3.508-7.837-7.837-7.837c-4.329,0-7.837,3.509-7.837,7.837v108.669 c0,15.268,12.422,27.69,27.69,27.69c5.046,0,9.882-1.34,14.106-3.852c4.224,2.512,9.06,3.852,14.106,3.852 c5.046,0,9.882-1.34,14.106-3.852c4.225,2.512,9.06,3.852,14.106,3.852c3.804,0,7.527-0.807,10.954-2.295v245.623 c0,13.037,10.745,23.643,23.951,23.643h294.873c13.205,0,23.949-10.606,23.949-23.643v-34.871 C474.921,449.158,471.413,445.649,467.084,445.649z"></path> </g> </g> </g></svg> Laporan Bulanan</h3>
+                    <input type="month" id="monthly-date" class="w-full px-3 py-2 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <div id="monthly-report" class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Pemasukan:</span>
+                            <span id="monthly-income" class="text-green-600 font-medium">Rp 0</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Pengeluaran:</span>
+                            <span id="monthly-expense" class="text-red-600 font-medium">Rp 0</span>
+                        </div>
+                        <hr class="my-2">
+                        <div class="flex justify-between font-semibold">
+                            <span>Selisih:</span>
+                            <span id="monthly-balance" class="text-gray-800">Rp 0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="edit-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+            <div class="bg-white rounded-xl shadow-xl p-6 m-4 w-full max-w-md">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4"><svg height="30px" width="30px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 491.52 491.52" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#64798A;" d="M11.6,456.091L11.6,456.091c3.498,3.502,8.386,4.027,10.418,1.121l-0.746,1.068 c-1.761,2.519-0.806,6.686,2.225,9.72c3.034,3.035,7.194,3.991,9.711,2.229l1.068-0.748c-2.905,2.034-2.379,6.927,1.12,10.429l0,0 c2.419,2.422,5.652,3.525,8.115,2.769l4.883-1.499l0,0l-32.173,9.972c-7.952,2.463-18.313-7.908-15.852-15.867l9.708-31.379 l-1.244,4.063C8.078,450.434,9.18,453.668,11.6,456.091z"></path> <path style="fill:#DC8744;" d="M35.395,479.909L35.395,479.909c-3.499-3.501-4.024-8.394-1.12-10.429l4.759-3.329l40.779-28.544 c0.81-0.568,4.931-4.525,5.995-4.533c-2.84,5.692-3.768,17.962,2.666,24.401c4.325,4.329,9.608,6.74,14.336,7 c-0.025,0.008-0.043,0.027-0.07,0.035l-54.346,16.67l-4.883,1.499C41.047,483.434,37.815,482.331,35.395,479.909z"></path> <path style="fill:#F6C358;" d="M57.306,406.633c-1.489,5.563-1.753,17.888,3.937,23.585c5.692,5.695,19.682,3.668,25.242,2.176 c-0.323,0.698-7.417,5.734-8.075,6.194l-39.375,27.563l-4.759,3.329l-1.068,0.748c-2.517,1.762-6.677,0.806-9.711-2.229 c-3.031-3.034-3.986-7.201-2.225-9.72l0.746-1.068l0,0l3.328-4.762l27.537-39.414C53.341,412.377,56.609,406.956,57.306,406.633z"></path> <path style="fill:#FCD462;" d="M34.012,402.961c6.434,6.44,19.242,3.104,24.929,0.261c-0.008,1.064-4.513,7.598-5.079,8.409 l-28.517,40.818l-3.328,4.762l0,0c-2.032,2.907-6.92,2.382-10.418-1.121l0,0c-2.419-2.423-3.521-5.657-2.766-8.123l1.244-4.063 l16.908-55.225c0.008-0.026,0.027-0.042,0.035-0.069C27.28,393.344,29.688,398.633,34.012,402.961z"></path> <path style="fill:#2D93BA;" d="M84.537,434.16c-1.299,1.3-2.904,2.173-4.69,2.651c-5.56,1.492-12.912-0.897-18.604-6.592 c-5.69-5.697-8.076-13.058-6.586-18.621c0.478-1.789,1.35-3.394,2.65-4.695L361.922,85.006l48.102,48.13L84.537,434.16z"></path> <path style="fill:#1C75A1;" d="M88.473,457.475c-6.433-6.439-8.635-15.001-5.795-20.694c0.478-0.961,1.087-1.849,1.858-2.621 l313.341-313.17l27.231,27.256l-3.941,3.944L111.767,461.416c-2.271,2.273-5.463,3.25-8.957,3.058 C98.081,464.215,92.798,461.804,88.473,457.475z"></path> <path style="fill:#27A2DB;" d="M57.306,406.903c-0.773,0.772-1.66,1.379-2.62,1.859c-5.686,2.844-14.239,0.641-20.674-5.8 c-4.325-4.328-6.732-9.618-6.993-14.35c-0.191-3.497,0.784-6.693,3.056-8.966L339.468,70.428l3.949-3.953l27.23,27.256 L57.306,406.903z"></path> <path style="fill:#D15241;" d="M370.64,64.355l72.496-43.182c9.258,8.278,18.961,17.99,27.232,27.257l-42.457,73.221 C418.759,112.638,379.645,73.515,370.64,64.355z"></path> <path style="fill:#CE412D;" d="M470.368,48.43c14.152,15.856,24.098,30.394,20.36,34.134L440.2,133.141 c-9.318-8.887-18.506-17.846-27.644-26.845L470.368,48.43z"></path> <path style="fill:#E56353;" d="M443.136,21.172l-57.81,57.868c-8.991-9.146-17.94-18.344-26.819-27.671l50.53-50.577 C412.773-2.947,427.296,7.007,443.136,21.172z"></path> <path style="fill:#EBF0F3;" d="M413.922,104.931c9.151,8.985,18.361,17.923,27.721,26.768l-17.983,17.996l-27.229-27.259 l-27.228-27.261l-27.228-27.259l17.982-17.997c8.835,9.37,17.761,18.592,26.737,27.753 C395.683,86.848,404.757,95.932,413.922,104.931z"></path> </g></svg>Edit Transaksi</h3>
+                <form id="edit-form" class="space-y-4">
+                    <input type="hidden" id="edit-id">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Jenis Transaksi</label>
+                        <select id="edit-type" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="income">Pemasukan</option>
+                            <option value="expense">Pengeluaran</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Jumlah</label>
+                        <input type="number" id="edit-amount" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Kategori</label>
+                        <select id="edit-category" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="makanan">Makanan & Minuman</option>
+                            <option value="transportasi">Transportasi</option>
+                            <option value="belanja">Belanja</option>
+                            <option value="hiburan">Hiburan</option>
+                            <option value="kesehatan">Kesehatan</option>
+                            <option value="gaji">Gaji</option>
+                            <option value="bonus">Bonus</option>
+                            <option value="lainnya">Lainnya</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Deskripsi</label>
+                        <input type="text" id="edit-description" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Tanggal</label>
+                        <input type="date" id="edit-date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                    </div>
+                    <div class="flex gap-3">
+                        <button type="submit" class="flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors">Simpan</button>
+                        <button type="button" onclick="closeEditModal()" class="flex-1 bg-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-400 transition-colors">Batal</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div id="confirm-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+            <div class="bg-white rounded-xl shadow-xl p-6 m-4 w-full max-w-sm">
+                <div class="text-center">
+                    <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100 mb-4">
+                        <svg class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.332 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Hapus Transaksi?</h3>
+                    <p class="text-sm text-gray-600">Apakah Anda yakin ingin menghapus transaksi ini? Tindakan ini tidak dapat dibatalkan.</p>
+                </div>
+                <div class="flex gap-3 mt-6">
+                    <button type="button" onclick="closeConfirmModal()" class="flex-1 bg-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-400 transition-colors font-medium">Batal</button>
+                    <button type="button" id="confirm-delete-button" class="flex-1 bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition-colors font-medium">Hapus</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCZzxTlMbWOI-EPp2kaIwuhsOa8j2zhMJw",
+            authDomain: "myduit-3bfab.firebaseapp.com",
+            projectId: "myduit-3bfab",
+            storageBucket: "myduit-3bfab.firebasestorage.app.appspot.com",
+            messagingSenderId: "191406057109",
+            appId: "1:191406057109:web:f3e6f273445bfcd0fc1d9c"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+
+    <script src="script.js"></script>
+    </body>
+</html>
